@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "aec995eb-df52-4ed0-8e0d-ca6dfbea69af",
+		"name": "Design4Green",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetCommuneStat",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "cfb27299-92f1-4fd5-b6f0-b256c98ae9b2",
+						"exec": [
+							"{\r",
+							"    \"global\":float,\r",
+							"    \"region\":float,\r",
+							"    \"departement\":float,\r",
+							"    \"digitalInterfaceAccess\":float,\r",
+							"    \"informationAccess\":float,\r",
+							"    \"administrativeCompetences\":float,\r",
+							"    \"digitalAndScolarCompetences\":float\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
