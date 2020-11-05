@@ -23,4 +23,4 @@ class Commune(Resource):
 api.add_resource(Commune, '/commune/<postalcode>/statistics')
 
 if __name__ == '__main__':
-    app.run(port='4443')
+    app.run(port='8080')
