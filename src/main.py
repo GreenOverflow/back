@@ -32,8 +32,6 @@ class CommunePdf(Resource):
         if not prog.match(postalcode):
             return {"code": "POSTAL_CODE_NOT_FOUND"}, 404
 
-        #test l'existance du pdf
-        #if absent generer le pdf
         generate_pdf(postalcode)
 
         try:

@@ -1,7 +1,4 @@
 from pylatex import Document, Tabular, Command, NoEscape
-
-import json
- 
 from data_fetch import indexes, to_api
 
 def generate_pdf(postal_code):
@@ -30,4 +27,4 @@ def generate_pdf(postal_code):
         table.add_row(results['global'], results['region'], results['departement'], results['digitalInterfaceAccess'], results['informationAccess'], results['administrativeCompetences'], results['digitalAndScolarCompetences'])
         table.add_hline()
     
-    doc.generate_pdf(f"./report/{postal_code}_stat_report", clean_tex=True, compiler='pdflatex')
+    doc.generate_pdf(f"./report/{postal_code}_stat_report", clean_tex=False, compiler='pdflatex')
