@@ -1,5 +1,4 @@
 from pylatex import Document, Tabular, Command, NoEscape
- 
 from data_fetch import indexes, to_api
 
 def generate_pdf(postal_code):
@@ -62,4 +61,4 @@ def generate_pdf(postal_code):
         doc.append("\n \n")
         doc.append(f"{city} score is very low. That means {city} does have a lot of digital exclusion.")
     
-    doc.generate_pdf(f"./report/{postal_code}_stat_report", clean_tex=True, compiler='pdflatex')
+    doc.generate_pdf(f"./report/{postal_code}_stat_report", clean_tex=False, compiler='pdflatex')
