@@ -1,7 +1,7 @@
 from flask import Flask, send_file
 from flask_restful import Resource, Api
-from src import data_fetch as dataFetch
-from src import pdf_generator as pdfGenerator
+from data_fetch import to_api, indexes
+from pdf_generator import generate_pdf
 import re
 
 app = Flask(__name__)
@@ -17,8 +17,8 @@ class Commune(Resource):
         int(postalcode)
 
         try:
-            result = dataFetch.to_api(dataFetch.indexes(postalcode))
-            if len(result.keys()) == 0:
+            result = to_api(indexes(postalcode))
+            if result is None:
                 return {"code": "POSTAL_CODE_NOT_FOUND"}, 404
             else:
                 return result
@@ -34,10 +34,10 @@ class CommunePdf(Resource):
 
         #test l'existance du pdf
         #if absent generer le pdf
-        pdfGenerator.generate_pdf(postalcode)
+        generate_pdf(postalcode)
 
         try:
-            return send_file('./report/{}_stat_report.pdf'.format(postalcode), attachment_filename='{}_stat_report.pdf'.format(postalcode))
+            return send_file(f"./report/{postalcode}_stat_report.pdf", attachment_filename=f"{postalcode}_stat_report.pdf")
         except Exception as e:
             return str(e)
 
