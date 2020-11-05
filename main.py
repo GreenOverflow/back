@@ -1,7 +1,6 @@
-from flask import Flask, request
+from flask import Flask
 from flask_restful import Resource, Api
-from sqlalchemy import create_engine
-from json import dumps
+import data_fetch as dataFetch
 
 app = Flask(__name__)
 api = Api(app)
@@ -9,7 +8,16 @@ api = Api(app)
 
 class Commune(Resource):
     def get(self, postalcode):
-        return {"postalCode": int(postalcode)}
+        try:
+            result = dataFetch.to_api(dataFetch.indexes(postalcode))
+            print(result)
+
+            if len(result.keys()) == 0:
+                return {"code": "POSTAL_CODE_NOT_FOUND"}, 404
+            else:
+                return result
+        except:
+            return {"code" : "UNKNOWN_SERVER_ERROR"}, 500
 
 
 api.add_resource(Commune, '/commune/<postalcode>/statistics')
