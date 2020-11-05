@@ -24,8 +24,21 @@ class Commune(Resource):
         except:
             return {"code": "UNKNOWN_SERVER_ERROR"}, 500
 
+    def get(self, postalcode):
+        # code Shara pour générer le pdf
+        return
+
+    def get(self, communename):
+        return
+
+    def get(self, communename):
+        return
+
 
 api.add_resource(Commune, '/commune/<postalcode>/statistics')
+api.add_resource(Commune, '/commune/<postalcode>/stat_report.pdf')
+# api.add_resource(Commune, '/commune/<communename>/statistics')
+# api.add_resource(Commune, '/commune/<communename>/stat_report.pdf')
 
 if __name__ == '__main__':
     app.run(port='8080')
