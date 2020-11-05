@@ -18,7 +18,8 @@ class Commune(Resource):
 
         try:
             result = dataFetch.to_api(dataFetch.indexes(postalcode))
-            if len(result.keys()) == 0:
+            if result is None:
+                print('phillipe')
                 return {"code": "POSTAL_CODE_NOT_FOUND"}, 404
             else:
                 return result
