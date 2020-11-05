@@ -1,5 +1,4 @@
 import mysql.connector
-import json
 
 mydb = mysql.connector.connect(
     host="vps-45d5666d.vps.ovh.net",
