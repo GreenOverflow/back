@@ -8,6 +8,8 @@ api = Api(app)
 
 class Commune(Resource):
     def get(self, postalcode):
+        if postalcode >= 100000:
+            return {"code": "POSTAL_CODE_NOT_FOUND"}, 404
         try:
             result = dataFetch.to_api(dataFetch.indexes(postalcode))
             print(result)
