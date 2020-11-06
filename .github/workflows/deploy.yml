@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: ssh deploy
+      - name: Deployment
         uses: easingthemes/ssh-deploy@v2.1.4
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
