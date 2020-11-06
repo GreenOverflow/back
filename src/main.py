@@ -22,7 +22,7 @@ class Commune(Resource):
                 return {"code": "POSTAL_CODE_NOT_FOUND"}, 404
             else:
                 return result
-        except:
+        except Exception:
             return {"code": "UNKNOWN_SERVER_ERROR"}, 500
 
 
