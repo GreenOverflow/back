@@ -68,5 +68,6 @@ def generate_pdf(postal_code):
             doc.append(f"{city} score is pretty low. That means {city} does have some digital exclusion.")
         else:
             doc.append(f"{city} score is very low. That means {city} does have a lot of digital exclusion.")
-        
+            
     doc.generate_pdf(f"./report/{postal_code}_stat_report", clean_tex=True, compiler='pdflatex')
+
