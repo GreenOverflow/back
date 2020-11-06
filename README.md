@@ -17,5 +17,5 @@ sudo systemctl [start|stop|restart|status] back
 - Tristan Dietz
 - Maxence Fernandez
 - Yann Moussan
-- Sarah Neau-Monier
+- Sarah Neau Monier
 - Makendy Piton
