@@ -8,7 +8,7 @@ Backend for GreenOverflow team.
 
 You can use the following to manage our backend, directly into our VPS.
 
-````sh
+```sh
 sudo systemctl [start|stop|restart|status] back
 ```
 
