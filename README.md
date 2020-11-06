@@ -12,10 +12,3 @@ You can use the following to manage our backend, directly into our VPS.
 sudo systemctl [start|stop|restart|status] back
 ```
 
-## Authors
-
-- Tristan Dietz
-- Maxence Fernandez
-- Yann Moussan
-- Sarah Neau Monier
-- Makendy Piton
