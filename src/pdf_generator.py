@@ -12,7 +12,7 @@ def generate_pdf(postal_code):
     geometry_options = {"tmargin": "1cm", "lmargin": "1cm", "rmargin": "1cm"}
     doc = Document(geometry_options=geometry_options)
 
-    doc.preamble.append(Command('title', f"{city}"))
+    doc.preamble.append(Command('title', f"{city} - {postal_code}"))
     doc.preamble.append(Command('author', 'Team 50'))
     doc.append(NoEscape(r'\maketitle'))
     
