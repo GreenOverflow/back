@@ -2,7 +2,7 @@
 
 [![Maintainability Rating](http://146.59.196.32:9000/api/project_badges/measure?project=Back&metric=sqale_rating)](http://146.59.196.32:9000/dashboard?id=Back) [![Reliability Rating](http://146.59.196.32:9000/api/project_badges/measure?project=Back&metric=reliability_rating)](http://146.59.196.32:9000/dashboard?id=Back) [![Security Rating](http://146.59.196.32:9000/api/project_badges/measure?project=Back&metric=security_rating)](http://146.59.196.32:9000/dashboard?id=Back) [![Vulnerabilities](http://146.59.196.32:9000/api/project_badges/measure?project=Back&metric=vulnerabilities)](http://146.59.196.32:9000/dashboard?id=Back)
 
-Backend for GreenOverflow team.
+Backend for Team 50.
 
 ## Usage
 
