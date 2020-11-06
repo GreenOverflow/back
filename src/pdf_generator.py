@@ -3,7 +3,8 @@ from pylatex import Document, Tabular, Command, NoEscape, Section, VerticalSpace
 from data_fetch import indexes, to_api
 
 def generate_pdf(postal_code):
-    
+    BREAK_LINE = "\n \n \n"
+
     results = to_api(indexes(postal_code))
 
     city = results['communeName']
@@ -21,7 +22,7 @@ def generate_pdf(postal_code):
         doc.append("L'indice de fragilité numérique a été créé afin d'aider à contrer les exclusions d'information.")
         doc.append("\n")
         doc.append("Il permet entre autres de localiser les endroits où les personnes trouvent difficile de s'adapter aux changements causés par la révolution de l'information et d'engager des plans d'actions pour apporter des solutions.")
-        doc.append("\n \n \n")
+        doc.append(BREAK_LINE)
         
         with doc.create(Tabular('|c|c|c|c|c|c|c|')) as table:
             table.add_hline()
@@ -29,7 +30,7 @@ def generate_pdf(postal_code):
             table.add_hline()
             table.add_row(results['global'], results['region'], results['departement'], results['digitalInterfaceAccess'], results['informationAccess'], results['administrativeCompetences'], results['digitalAndScolarCompetences'])
             table.add_hline()
-        doc.append("\n \n \n")
+        doc.append(BREAK_LINE)
             
         if int(results["global"]) > (276 * 0.8):
             doc.append(f"Le score de {city} est vraiment excellent. Cela veut dire que {city} n'a presque pas d'exclusion numérique.")
@@ -42,13 +43,13 @@ def generate_pdf(postal_code):
         else:
             doc.append(f"Le score de {city} est très bas. Cela veut dire que {city} a vraiment beaucoup d'exclusion numérique.")
     
-        doc.append("\n \n \n \n \n")
+        doc.append(BREAK_LINE + BREAK_LINE)
     
     with doc.create(Section("FRAGILITY SCORE RESULTS", numbering=False)):
         doc.append("The digital fragility index was created to help fight digital exclusion.")
         doc.append("\n")
         doc.append("It allows you to locate areas where people find it difficult to adjust to changes caused by challenges of digital revolution and set up action plans to provide solutions.")
-        doc.append("\n \n \n")
+        doc.append(BREAK_LINE)
         
         with doc.create(Tabular('|c|c|c|c|c|c|c|')) as table:
             table.add_hline()
@@ -56,7 +57,7 @@ def generate_pdf(postal_code):
             table.add_hline()
             table.add_row(results['global'], results['region'], results['departement'], results['digitalInterfaceAccess'], results['informationAccess'], results['administrativeCompetences'], results['digitalAndScolarCompetences'])
             table.add_hline()
-        doc.append("\n \n \n")
+        doc.append(BREAK_LINE)
         
         if int(results["global"]) > (276 * 0.8):
             doc.append(f"{city} score is very good. That means {city} doesn't have digital exclusion.")
